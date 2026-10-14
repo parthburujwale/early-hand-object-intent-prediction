@@ -1,0 +1,2 @@
+mode,fraction,best_epoch,top1_accuracy,top3_accuracy
+hand,10,48,0.4344262295081967,0.5737704918032787

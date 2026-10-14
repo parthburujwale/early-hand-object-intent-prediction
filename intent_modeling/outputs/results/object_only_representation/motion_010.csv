@@ -1,0 +1,2 @@
+mode,fraction,best_epoch,top1_accuracy,top3_accuracy
+motion,10,36,0.21311475409836064,0.4262295081967213

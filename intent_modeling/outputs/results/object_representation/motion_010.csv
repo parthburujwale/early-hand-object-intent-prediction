@@ -1,0 +1,3 @@
+squeue -u $USER
+mode,fraction,best_epoch,top1_accuracy,top3_accuracy
+motion,10,69,0.45901639344262296,0.6311475409836066
