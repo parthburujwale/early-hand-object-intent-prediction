@@ -1,0 +1,2 @@
+model,fraction,seed,top1_accuracy,top3_accuracy,macro_precision,macro_recall,macro_f1
+hand_motion_only,30,10,0.48360655737704916,0.6557377049180327,0.6142115600448934,0.5046296296296295,0.4945444987111654

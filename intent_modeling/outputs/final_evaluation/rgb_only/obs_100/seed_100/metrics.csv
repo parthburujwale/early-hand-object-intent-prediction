@@ -1,0 +1,2 @@
+model,fraction,seed,top1_accuracy,top3_accuracy,macro_precision,macro_recall,macro_f1
+rgb_only,100,100,0.680327868852459,0.9016393442622951,0.7566798941798942,0.7013888888888888,0.6846349638016305

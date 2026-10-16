@@ -1,0 +1,164 @@
+true_action_label,true_action,pred_action_label,predicted_action,true_verb,predicted_verb,true_object,predicted_object,same_object,same_verb,rgb_errors,position_errors,motion_errors,reduction_rgb_to_position,reduction_position_to_motion,reduction_rgb_to_motion,fraction
+1,grab book,9,place book,grab,place,book,book,True,False,0,0,1,0,-1,-1,10
+2,grab espresso,5,grab milk,grab,grab,espresso,milk,False,True,0,2,1,-2,1,-1,10
+2,grab espresso,6,grab cocoa,grab,grab,espresso,cocoa,False,True,0,0,1,0,-1,-1,10
+2,grab espresso,10,place espresso,grab,place,espresso,espresso,True,False,0,0,1,0,-1,-1,10
+2,grab espresso,24,take out espresso,grab,take out,espresso,espresso,True,False,1,1,0,0,1,1,10
+2,grab espresso,34,read espresso,grab,read,espresso,espresso,True,False,3,0,0,3,0,3,10
+3,grab lotion,1,grab book,grab,grab,lotion,book,False,True,0,1,0,-1,1,0,10
+3,grab lotion,4,grab spray,grab,grab,lotion,spray,False,True,2,1,3,1,-2,-1,10
+3,grab lotion,20,close lotion,grab,close,lotion,lotion,True,False,1,0,0,1,0,1,10
+4,grab spray,32,apply spray,grab,apply,spray,spray,True,False,2,0,0,2,0,2,10
+4,grab spray,35,spray spray,grab,spray,spray,spray,True,False,1,0,0,1,0,1,10
+5,grab milk,1,grab book,grab,grab,milk,book,False,True,2,0,0,2,0,2,10
+5,grab milk,3,grab lotion,grab,grab,milk,lotion,False,True,0,1,1,-1,0,-1,10
+6,grab cocoa,1,grab book,grab,grab,cocoa,book,False,True,0,1,0,-1,1,0,10
+7,grab chips,1,grab book,grab,grab,chips,book,False,True,0,1,0,-1,1,0,10
+7,grab chips,19,open chips,grab,open,chips,chips,True,False,1,0,0,1,0,1,10
+10,place espresso,13,place milk,place,place,espresso,milk,False,True,0,0,1,0,-1,-1,10
+10,place espresso,18,open milk,place,open,espresso,milk,False,False,1,0,0,1,0,1,10
+10,place espresso,24,take out espresso,place,take out,espresso,espresso,True,False,3,0,0,3,0,3,10
+10,place espresso,34,read espresso,place,read,espresso,espresso,True,False,1,0,0,1,0,1,10
+11,place lotion,3,grab lotion,place,grab,lotion,lotion,True,False,2,4,4,-2,0,-2,10
+11,place lotion,12,place spray,place,place,lotion,spray,False,True,3,0,2,3,-2,1,10
+11,place lotion,15,place chips,place,place,lotion,chips,False,True,0,1,0,-1,1,0,10
+11,place lotion,17,open lotion,place,open,lotion,lotion,True,False,2,0,0,2,0,2,10
+11,place lotion,20,close lotion,place,close,lotion,lotion,True,False,1,1,0,0,1,1,10
+11,place lotion,23,pour milk,place,pour,lotion,milk,False,False,1,0,0,1,0,1,10
+11,place lotion,35,spray spray,place,spray,lotion,spray,False,False,1,1,0,0,1,1,10
+11,place lotion,36,squeeze lotion,place,squeeze,lotion,lotion,True,False,3,3,2,0,1,1,10
+12,place spray,4,grab spray,place,grab,spray,spray,True,False,4,3,3,1,0,1,10
+12,place spray,11,place lotion,place,place,spray,lotion,False,True,0,2,0,-2,2,0,10
+12,place spray,35,spray spray,place,spray,spray,spray,True,False,3,3,2,0,1,1,10
+13,place milk,5,grab milk,place,grab,milk,milk,True,False,2,0,2,2,-2,0,10
+13,place milk,18,open milk,place,open,milk,milk,True,False,3,5,2,-2,3,1,10
+13,place milk,21,close milk,place,close,milk,milk,True,False,1,1,1,0,0,0,10
+14,place cocoa,25,take out cocoa,place,take out,cocoa,cocoa,True,False,1,0,0,1,0,1,10
+14,place cocoa,29,put in cocoa,place,put in,cocoa,cocoa,True,False,5,0,0,5,0,5,10
+15,place chips,7,grab chips,place,grab,chips,chips,True,False,0,1,1,-1,0,-1,10
+15,place chips,19,open chips,place,open,chips,chips,True,False,5,2,3,3,-1,2,10
+15,place chips,24,take out espresso,place,take out,chips,espresso,False,False,1,1,0,0,1,1,10
+17,open lotion,11,place lotion,open,place,lotion,lotion,True,False,7,5,5,2,0,2,10
+17,open lotion,20,close lotion,open,close,lotion,lotion,True,False,1,0,1,1,-1,0,10
+18,open milk,13,place milk,open,place,milk,milk,True,False,3,1,0,2,1,3,10
+18,open milk,21,close milk,open,close,milk,milk,True,False,1,0,0,1,0,1,10
+18,open milk,23,pour milk,open,pour,milk,milk,True,False,0,1,0,-1,1,0,10
+19,open chips,7,grab chips,open,grab,chips,chips,True,False,3,0,0,3,0,3,10
+19,open chips,15,place chips,open,place,chips,chips,True,False,0,1,0,-1,1,0,10
+19,open chips,18,open milk,open,open,chips,milk,False,True,0,1,0,-1,1,0,10
+20,close lotion,11,place lotion,close,place,lotion,lotion,True,False,2,4,3,-2,1,-1,10
+20,close lotion,12,place spray,close,place,lotion,spray,False,False,0,0,1,0,-1,-1,10
+20,close lotion,17,open lotion,close,open,lotion,lotion,True,False,0,0,1,0,-1,-1,10
+21,close milk,13,place milk,close,place,milk,milk,True,False,0,1,0,-1,1,0,10
+21,close milk,18,open milk,close,open,milk,milk,True,False,3,6,1,-3,5,2,10
+22,close chips,7,grab chips,close,grab,chips,chips,True,False,1,0,0,1,0,1,10
+22,close chips,15,place chips,close,place,chips,chips,True,False,0,0,1,0,-1,-1,10
+22,close chips,19,open chips,close,open,chips,chips,True,False,1,1,3,0,-2,-2,10
+22,close chips,26,take out chips,close,take out,chips,chips,True,False,3,3,0,0,3,3,10
+23,pour milk,13,place milk,pour,place,milk,milk,True,False,0,1,0,-1,1,0,10
+23,pour milk,18,open milk,pour,open,milk,milk,True,False,1,1,1,0,0,0,10
+23,pour milk,21,close milk,pour,close,milk,milk,True,False,0,1,0,-1,1,0,10
+24,take out espresso,10,place espresso,take out,place,espresso,espresso,True,False,2,4,3,-2,1,-1,10
+24,take out espresso,13,place milk,take out,place,espresso,milk,False,False,0,1,0,-1,1,0,10
+24,take out espresso,18,open milk,take out,open,espresso,milk,False,False,1,3,2,-2,1,-1,10
+24,take out espresso,21,close milk,take out,close,espresso,milk,False,False,0,1,0,-1,1,0,10
+24,take out espresso,23,pour milk,take out,pour,espresso,milk,False,False,0,0,1,0,-1,-1,10
+24,take out espresso,27,take out cappuccino,take out,take out,espresso,cappuccino,False,True,1,0,0,1,0,1,10
+24,take out espresso,28,put in espresso,take out,put in,espresso,espresso,True,False,1,2,3,-1,-1,-2,10
+24,take out espresso,33,read book,take out,read,espresso,book,False,False,1,0,0,1,0,1,10
+24,take out espresso,34,read espresso,take out,read,espresso,espresso,True,False,1,0,0,1,0,1,10
+25,take out cocoa,29,put in cocoa,take out,put in,cocoa,cocoa,True,False,2,3,0,-1,3,2,10
+26,take out chips,19,open chips,take out,open,chips,chips,True,False,1,1,1,0,0,0,10
+26,take out chips,22,close chips,take out,close,chips,chips,True,False,0,0,1,0,-1,-1,10
+26,take out chips,25,take out cocoa,take out,take out,chips,cocoa,False,True,2,0,3,2,-3,-1,10
+26,take out chips,32,apply spray,take out,apply,chips,spray,False,False,0,0,1,0,-1,-1,10
+26,take out chips,34,read espresso,take out,read,chips,espresso,False,False,1,1,0,0,1,1,10
+27,take out cappuccino,8,grab cappuccino,take out,grab,cappuccino,cappuccino,True,False,1,1,0,0,1,1,10
+27,take out cappuccino,30,put in cappuccino,take out,put in,cappuccino,cappuccino,True,False,1,1,0,0,1,1,10
+28,put in espresso,18,open milk,put in,open,espresso,milk,False,False,0,1,0,-1,1,0,10
+28,put in espresso,20,close lotion,put in,close,espresso,lotion,False,False,2,0,0,2,0,2,10
+28,put in espresso,24,take out espresso,put in,take out,espresso,espresso,True,False,0,2,2,-2,0,-2,10
+28,put in espresso,26,take out chips,put in,take out,espresso,chips,False,False,0,1,0,-1,1,0,10
+29,put in cocoa,25,take out cocoa,put in,take out,cocoa,cocoa,True,False,2,0,0,2,0,2,10
+30,put in cappuccino,27,take out cappuccino,put in,take out,cappuccino,cappuccino,True,False,2,0,1,2,-1,1,10
+31,apply lotion,3,grab lotion,apply,grab,lotion,lotion,True,False,4,1,0,3,1,4,10
+31,apply lotion,4,grab spray,apply,grab,lotion,spray,False,False,1,0,0,1,0,1,10
+32,apply spray,4,grab spray,apply,grab,spray,spray,True,False,3,2,0,1,2,3,10
+32,apply spray,31,apply lotion,apply,apply,spray,lotion,False,True,0,3,1,-3,2,-1,10
+33,read book,9,place book,read,place,book,book,True,False,3,0,0,3,0,3,10
+34,read espresso,24,take out espresso,read,take out,espresso,espresso,True,False,0,3,2,-3,1,-2,10
+35,spray spray,11,place lotion,spray,place,spray,lotion,False,False,0,1,0,-1,1,0,10
+35,spray spray,12,place spray,spray,place,spray,spray,True,False,3,1,4,2,-3,-1,10
+36,squeeze lotion,11,place lotion,squeeze,place,lotion,lotion,True,False,0,2,2,-2,0,-2,10
+36,squeeze lotion,20,close lotion,squeeze,close,lotion,lotion,True,False,0,1,0,-1,1,0,10
+1,grab book,9,place book,grab,place,book,book,True,False,1,2,4,-1,-2,-3,100
+1,grab book,33,read book,grab,read,book,book,True,False,1,0,0,1,0,1,100
+2,grab espresso,10,place espresso,grab,place,espresso,espresso,True,False,0,3,3,-3,0,-3,100
+2,grab espresso,13,place milk,grab,place,espresso,milk,False,False,0,1,0,-1,1,0,100
+2,grab espresso,24,take out espresso,grab,take out,espresso,espresso,True,False,1,0,0,1,0,1,100
+2,grab espresso,34,read espresso,grab,read,espresso,espresso,True,False,2,0,0,2,0,2,100
+3,grab lotion,4,grab spray,grab,grab,lotion,spray,False,True,4,3,2,1,1,2,100
+3,grab lotion,11,place lotion,grab,place,lotion,lotion,True,False,1,1,0,0,1,1,100
+3,grab lotion,20,close lotion,grab,close,lotion,lotion,True,False,1,0,0,1,0,1,100
+3,grab lotion,32,apply spray,grab,apply,lotion,spray,False,False,1,0,0,1,0,1,100
+4,grab spray,12,place spray,grab,place,spray,spray,True,False,4,3,5,1,-2,-1,100
+4,grab spray,32,apply spray,grab,apply,spray,spray,True,False,1,0,0,1,0,1,100
+5,grab milk,13,place milk,grab,place,milk,milk,True,False,1,2,2,-1,0,-1,100
+5,grab milk,18,open milk,grab,open,milk,milk,True,False,1,0,0,1,0,1,100
+5,grab milk,21,close milk,grab,close,milk,milk,True,False,1,2,0,-1,2,1,100
+6,grab cocoa,14,place cocoa,grab,place,cocoa,cocoa,True,False,0,1,1,-1,0,-1,100
+7,grab chips,15,place chips,grab,place,chips,chips,True,False,0,1,0,-1,1,0,100
+8,grab cappuccino,16,place cappuccino,grab,place,cappuccino,cappuccino,True,False,3,1,1,2,0,2,100
+9,place book,1,grab book,place,grab,book,book,True,False,0,0,6,0,-6,-6,100
+10,place espresso,2,grab espresso,place,grab,espresso,espresso,True,False,0,1,1,-1,0,-1,100
+10,place espresso,24,take out espresso,place,take out,espresso,espresso,True,False,4,0,0,4,0,4,100
+11,place lotion,3,grab lotion,place,grab,lotion,lotion,True,False,2,0,2,2,-2,0,100
+11,place lotion,9,place book,place,place,lotion,book,False,True,0,2,1,-2,1,-1,100
+11,place lotion,12,place spray,place,place,lotion,spray,False,True,4,3,4,1,-1,0,100
+11,place lotion,20,close lotion,place,close,lotion,lotion,True,False,2,0,0,2,0,2,100
+11,place lotion,32,apply spray,place,apply,lotion,spray,False,False,1,0,0,1,0,1,100
+12,place spray,4,grab spray,place,grab,spray,spray,True,False,4,5,3,-1,2,1,100
+12,place spray,35,spray spray,place,spray,spray,spray,True,False,1,0,0,1,0,1,100
+13,place milk,5,grab milk,place,grab,milk,milk,True,False,3,1,4,2,-3,-1,100
+13,place milk,21,close milk,place,close,milk,milk,True,False,0,3,0,-3,3,0,100
+13,place milk,24,take out espresso,place,take out,milk,espresso,False,False,1,0,0,1,0,1,100
+13,place milk,28,put in espresso,place,put in,milk,espresso,False,False,1,0,0,1,0,1,100
+14,place cocoa,6,grab cocoa,place,grab,cocoa,cocoa,True,False,1,0,2,1,-2,-1,100
+15,place chips,7,grab chips,place,grab,chips,chips,True,False,2,2,5,0,-3,-3,100
+15,place chips,19,open chips,place,open,chips,chips,True,False,0,1,0,-1,1,0,100
+15,place chips,20,close lotion,place,close,chips,lotion,False,False,1,0,0,1,0,1,100
+15,place chips,22,close chips,place,close,chips,chips,True,False,0,1,0,-1,1,0,100
+16,place cappuccino,8,grab cappuccino,place,grab,cappuccino,cappuccino,True,False,0,1,0,-1,1,0,100
+17,open lotion,4,grab spray,open,grab,lotion,spray,False,False,0,1,1,-1,0,-1,100
+17,open lotion,20,close lotion,open,close,lotion,lotion,True,False,4,3,5,1,-2,-1,100
+18,open milk,21,close milk,open,close,milk,milk,True,False,3,3,5,0,-2,-2,100
+19,open chips,22,close chips,open,close,chips,chips,True,False,5,1,1,4,0,4,100
+19,open chips,26,take out chips,open,take out,chips,chips,True,False,0,2,3,-2,-1,-3,100
+20,close lotion,3,grab lotion,close,grab,lotion,lotion,True,False,0,0,1,0,-1,-1,100
+20,close lotion,4,grab spray,close,grab,lotion,spray,False,False,0,1,1,-1,0,-1,100
+20,close lotion,17,open lotion,close,open,lotion,lotion,True,False,2,2,1,0,1,1,100
+21,close milk,18,open milk,close,open,milk,milk,True,False,2,1,0,1,1,2,100
+22,close chips,19,open chips,close,open,chips,chips,True,False,1,2,0,-1,2,1,100
+22,close chips,26,take out chips,close,take out,chips,chips,True,False,1,0,1,1,-1,0,100
+23,pour milk,13,place milk,pour,place,milk,milk,True,False,0,0,1,0,-1,-1,100
+24,take out espresso,25,take out cocoa,take out,take out,espresso,cocoa,False,True,0,2,0,-2,2,0,100
+24,take out espresso,28,put in espresso,take out,put in,espresso,espresso,True,False,5,3,3,2,0,2,100
+24,take out espresso,34,read espresso,take out,read,espresso,espresso,True,False,2,0,1,2,-1,1,100
+25,take out cocoa,29,put in cocoa,take out,put in,cocoa,cocoa,True,False,4,4,4,0,0,0,100
+26,take out chips,25,take out cocoa,take out,take out,chips,cocoa,False,True,0,1,1,-1,0,-1,100
+27,take out cappuccino,8,grab cappuccino,take out,grab,cappuccino,cappuccino,True,False,1,0,0,1,0,1,100
+27,take out cappuccino,16,place cappuccino,take out,place,cappuccino,cappuccino,True,False,0,0,1,0,-1,-1,100
+27,take out cappuccino,30,put in cappuccino,take out,put in,cappuccino,cappuccino,True,False,2,3,2,-1,1,0,100
+28,put in espresso,10,place espresso,put in,place,espresso,espresso,True,False,1,0,0,1,0,1,100
+28,put in espresso,24,take out espresso,put in,take out,espresso,espresso,True,False,4,0,0,4,0,4,100
+29,put in cocoa,25,take out cocoa,put in,take out,cocoa,cocoa,True,False,0,2,1,-2,1,-1,100
+30,put in cappuccino,8,grab cappuccino,put in,grab,cappuccino,cappuccino,True,False,1,0,0,1,0,1,100
+30,put in cappuccino,9,place book,put in,place,cappuccino,book,False,False,1,0,0,1,0,1,100
+30,put in cappuccino,16,place cappuccino,put in,place,cappuccino,cappuccino,True,False,2,1,2,1,-1,0,100
+30,put in cappuccino,27,take out cappuccino,put in,take out,cappuccino,cappuccino,True,False,1,2,0,-1,2,1,100
+31,apply lotion,32,apply spray,apply,apply,lotion,spray,False,True,3,0,0,3,0,3,100
+32,apply spray,31,apply lotion,apply,apply,spray,lotion,False,True,0,2,3,-2,-1,-3,100
+32,apply spray,36,squeeze lotion,apply,squeeze,spray,lotion,False,False,1,0,0,1,0,1,100
+33,read book,9,place book,read,place,book,book,True,False,1,0,0,1,0,1,100
+35,spray spray,32,apply spray,spray,apply,spray,spray,True,False,1,0,0,1,0,1,100
+35,spray spray,36,squeeze lotion,spray,squeeze,spray,lotion,False,False,0,1,1,-1,0,-1,100

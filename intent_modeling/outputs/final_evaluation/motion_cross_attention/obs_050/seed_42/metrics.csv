@@ -1,0 +1,2 @@
+model,fraction,seed,top1_accuracy,top3_accuracy,macro_precision,macro_recall,macro_f1
+motion_cross_attention,50,42,0.7950819672131147,0.9672131147540983,0.8235449735449735,0.7962962962962963,0.7837352462352463

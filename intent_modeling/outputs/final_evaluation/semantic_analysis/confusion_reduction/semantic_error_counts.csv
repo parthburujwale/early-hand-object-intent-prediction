@@ -1,0 +1,7 @@
+model,fraction,total_errors,same_object_wrong_verb,same_verb_wrong_object,both_wrong
+rgb_only,10,117,97,10,10
+position_cross_attention,10,99,74,14,11
+motion_cross_attention,10,75,57,13,5
+rgb_only,100,98,80,11,7
+position_cross_attention,100,77,60,13,4
+motion_cross_attention,100,85,71,11,3

@@ -52,3 +52,11 @@ intent_modeling/outputs/normalized/
 intent_modeling/outputs/processed/
 *.npz
 intent_modeling/best_accuracy
+
+# Raw final-evaluation arrays
+intent_modeling/outputs/final_evaluation/**/predictions.npz
+
+# Python caches
+**/__pycache__/
+*.pycintent_modeling/outputs/final_evaluation/all_evaluation_metrics.csv
+intent_modeling/outputs/final_evaluation/all_evaluation_metrics.csv

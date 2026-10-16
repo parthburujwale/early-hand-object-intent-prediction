@@ -1,0 +1,9 @@
+sample_index,dataset_id,true_class_index,true_action_label,true_action,rgb_majority_action,position_majority_action,motion_majority_action,rgb_correct_seeds,position_correct_seeds,motion_correct_seeds,rgb_same_object_wrong_verb,position_same_object_wrong_verb,rgb_predictions,position_predictions,motion_predictions,score
+8,9,20,21,close milk,open milk,open milk,close milk,1,0,3,True,True,open milk | open milk | close milk,open milk | open milk | open milk,close milk | close milk | close milk,23
+73,74,24,25,take out cocoa,put in cocoa,put in cocoa,take out cocoa,1,1,3,True,True,take out cocoa | put in cocoa | put in cocoa,put in cocoa | take out cocoa | put in cocoa,take out cocoa | take out cocoa | take out cocoa,23
+88,89,17,18,open milk,place milk,place milk,open milk,0,1,3,True,True,close milk | place milk | place milk,place milk | open milk | pour milk,open milk | open milk | open milk,22
+2,3,26,27,take out cappuccino,put in cappuccino,put in cappuccino,take out cappuccino,1,1,3,True,True,put in cappuccino | grab cappuccino | take out cappuccino,put in cappuccino | grab cappuccino | take out cappuccino,take out cappuccino | take out cappuccino | take out cappuccino,21
+12,13,10,11,place lotion,open lotion,place lotion,place lotion,0,2,3,True,False,spray spray | open lotion | open lotion,place chips | place lotion | place lotion,place lotion | place lotion | place lotion,15
+20,21,14,15,place chips,open chips,place chips,place chips,0,3,3,True,False,open chips | open chips | open chips,place chips | place chips | place chips,place chips | place chips | place chips,15
+30,31,3,4,grab spray,apply spray,grab spray,grab spray,1,3,3,True,False,apply spray | grab spray | apply spray,grab spray | grab spray | grab spray,grab spray | grab spray | grab spray,15
+51,52,32,33,read book,place book,read book,read book,1,3,3,True,False,read book | place book | place book,read book | read book | read book,read book | read book | read book,15

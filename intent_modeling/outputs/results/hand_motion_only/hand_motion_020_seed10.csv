@@ -1,0 +1,2 @@
+fraction,seed,best_epoch,top1_accuracy,top3_accuracy
+20,10,25,0.4672131147540984,0.6721311475409836
