@@ -8,9 +8,31 @@ The central research question is:
 
 Using the H2O dataset, we study action prediction at 10%, 20%, 30%, 50%, 75%, and 100% observation of an interaction. The final system combines RGB appearance with 3D hand pose and temporal hand-motion information using hand-conditioned cross-attention.
 
+---
+
+## Main Result
+
+At only **10% observation**, the full RGB + hand position + velocity model achieves:
+
+- **79.51% Top-1 accuracy**
+- compared with **68.03% for RGB-only**
+- an improvement of **+11.48 percentage points**
+
+The benefit of explicit hand motion is strongest during the earliest stages of an interaction.
+
+![Top-1 anticipation curve](intent_modeling/outputs/final_evaluation/figures/top1_anticipation_curve.png)
+
+---
+
 ## Motivation
 
-Early intent prediction is useful for human-robot interaction, assistive systems, anticipatory interfaces, and embodied AI.
+Early intent prediction is useful for:
+
+- human-robot interaction
+- assistive systems
+- anticipatory interfaces
+- embodied AI
+- collaborative robotics
 
 A visual model can often recognize which object is present very early in an interaction. However, object identity alone does not reveal what the person intends to do with that object.
 
@@ -24,6 +46,8 @@ For example, seeing a milk container may not distinguish between:
 
 This project investigates whether 3D hand configuration and temporal motion can resolve this ambiguity before the action is completed.
 
+---
+
 ## Dataset
 
 Experiments use the H2O human-object interaction dataset.
@@ -35,7 +59,7 @@ The processed dataset contains synchronized:
 - 3D hand pose
 - action annotations
 
-The action space contains 36 valid verb-object combinations.
+The action space contains **36 valid verb-object combinations**.
 
 Examples include:
 
@@ -48,7 +72,9 @@ Examples include:
 - apply lotion
 - pour milk
 
-The official validation split contains 122 action segments.
+The official validation split contains **122 action segments**.
+
+---
 
 ## Partial Observation Protocol
 
@@ -66,7 +92,7 @@ of the observed action sequence.
 The number of real temporal samples increases with observation:
 
 | Observation | Real temporal samples |
-|---|---:|
+|---:|---:|
 | 10% | 4 |
 | 20% | 8 |
 | 30% | 12 |
@@ -78,17 +104,22 @@ All sequences use a maximum length of 32 with masked padding.
 
 This prevents the model from receiving the same number of temporal observations at every anticipation fraction.
 
+---
+
 ## Models
 
 ### RGB Only
 
 A frozen ImageNet-pretrained ViT-B/16 extracts RGB features.
 
-The temporal sequence is processed using a Transformer encoder.
+The temporal RGB sequence is then processed using a Transformer encoder.
 
 ### Hand Motion Only
 
-The hand-only baseline uses wrist-relative 3D hand joint coordinates together with frame-to-frame changes in those coordinates.
+The hand-only baseline uses:
+
+- wrist-relative 3D hand joint coordinates
+- frame-to-frame changes in those coordinates
 
 This model contains no RGB information.
 
@@ -110,9 +141,11 @@ The final model combines:
 
 The RGB encoder remains frozen while the multimodal fusion layers are trained.
 
-## Main Results
+---
 
-Results are averaged over three random seeds.
+## Main Quantitative Results
+
+Results are averaged over **three random seeds: 10, 42, and 100**.
 
 ### Top-1 Accuracy
 
@@ -125,25 +158,13 @@ Results are averaged over three random seeds.
 | 75% | 52.19 ± 2.50 | 74.59 ± 1.42 | 78.69 ± 2.17 | **80.60 ± 1.25** |
 | 100% | 54.92 ± 2.46 | 73.22 ± 5.33 | **78.96 ± 4.66** | 76.78 ± 4.04 |
 
-## Early Prediction Result
+The full model provides its largest gains during the earliest observation windows.
 
-At only 10% observation:
+---
 
-- RGB only: **68.03%**
-- RGB + hand position: **72.95%**
-- RGB + hand position + velocity: **79.51%**
+## What Does Each Modality Contribute?
 
-This corresponds to:
-
-- +4.92 percentage points from hand-position cross-attention over RGB
-- +6.56 percentage points from adding hand motion
-- +11.48 percentage points overall over RGB-only
-
-The benefit of explicit hand motion is strongest during early anticipation.
-
-## What Is the Model Learning?
-
-A semantic decomposition of the 10% predictions reveals:
+At **10% observation**:
 
 | Model | Action Accuracy | Verb Accuracy | Object Accuracy |
 |---|---:|---:|---:|
@@ -151,13 +172,19 @@ A semantic decomposition of the 10% predictions reveals:
 | RGB + hand position | 72.95% | 76.78% | 93.17% |
 | RGB + hand position + velocity | **79.51%** | **83.06%** | **95.08%** |
 
+![Verb, object, and action accuracy](intent_modeling/outputs/final_evaluation/semantic_analysis/summary_figures/verb_object_action_10pct.png)
+
 The full model improves:
 
 - action recognition by **+11.48 pp**
 - verb recognition by **+12.30 pp**
 - object recognition by only **+0.55 pp**
 
-This suggests that RGB appearance already provides strong object information, while 3D hand configuration and motion primarily help determine what action is being performed with that object.
+This indicates that RGB already provides strong object information very early.
+
+The hand stream primarily helps determine **what the user is doing with the object**.
+
+---
 
 ## Verb Ambiguity
 
@@ -168,17 +195,23 @@ At 10% observation:
 
 Across all three seeds:
 
-- RGB-only produces 97 same-object / wrong-verb mistakes
-- position cross-attention reduces this to 74
-- position + velocity reduces it to 57
+- RGB-only: **97** same-object / wrong-verb errors
+- RGB + hand position: **74**
+- RGB + hand position + velocity: **57**
 
-Thus the full model reduces these semantic errors by approximately 41% relative to RGB-only.
+This corresponds to roughly a **41% reduction** in same-object / wrong-verb mistakes compared with RGB-only.
+
+![Semantic error breakdown](intent_modeling/outputs/final_evaluation/semantic_analysis/summary_figures/semantic_error_breakdown_10pct.png)
+
+This supports the interpretation that motion helps resolve action ambiguity after the object has already been recognized.
+
+---
 
 ## Motion-Sensitive Actions
 
-Some of the largest improvements from explicit hand motion occur for actions where direction and interaction dynamics are important.
+Some of the largest improvements from explicit hand motion occur for actions where direction and interaction dynamics matter.
 
-Examples at 10% observation include:
+Examples include:
 
 - close milk
 - take out cocoa
@@ -190,55 +223,17 @@ Examples at 10% observation include:
 
 For example:
 
-**close milk**
+### Close Milk
 
-- hand position model: 22.22%
-- position + velocity model: 88.89%
+Position-only accuracy:
 
-The `close milk -> open milk` confusion decreases from 6 errors with position-only fusion to 1 error after adding hand motion.
+**22.22%**
 
-## Qualitative Examples
+Position + velocity accuracy:
 
-Several validation examples consistently demonstrate the benefit of motion across all three random seeds.
+**88.89%**
 
-Examples include:
-
-| True Action | RGB Prediction | Hand Position Prediction | Motion Model Prediction |
-|---|---|---|---|
-| close milk | open milk | open milk | **close milk** |
-| take out cocoa | put in cocoa | put in cocoa | **take out cocoa** |
-| open milk | place milk | place milk | **open milk** |
-| take out cappuccino | put in cappuccino | put in cappuccino | **take out cappuccino** |
-
-These examples illustrate that the model often already knows the correct object but needs motion information to infer the correct interaction direction or verb.
-
-## Key Finding
-
-The central result of this project is:
-
-> Visual appearance provides strong early object recognition, while 3D hand position and especially temporal hand motion provide complementary information for resolving verb-level intent ambiguity.
-
-Explicit motion provides its largest benefit during the earliest observation windows, where the action itself has not yet fully unfolded.
-
-## Repository Structure
+The confusion:
 
 ```text
-intent_modeling/
-├── src/
-│   ├── build_masked_partial_index.py
-│   ├── train_rgb_only_vit_masked.py
-│   ├── train_hand_motion_only.py
-│   ├── train_position_cross_attention_transformer.py
-│   ├── train_motion_cross_attention_transformer.py
-│   ├── evaluate_final_models.py
-│   ├── aggregate_final_results.py
-│   ├── plot_final_results.py
-│   ├── analyze_class_performance.py
-│   ├── analyze_action_semantics.py
-│   ├── make_semantic_summary_figures.py
-│   ├── analyze_confusion_reduction.py
-│   └── make_qualitative_examples.py
-│
-└── outputs/
-    ├── results/
-    └── final_evaluation/
+close milk -> open milk
